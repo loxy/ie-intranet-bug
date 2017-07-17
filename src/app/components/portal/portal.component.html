@@ -1,0 +1,25 @@
+<div class="portal-header">
+  <span class="title">Header</span>
+</div>
+<div class="portal-content">
+  <div class="portal-menu">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" ui-sref-active="active"><a ui-sref="about">About</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="ext.holder.internal({app: 'app01', tail: 'x'})">
+        App01, x</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="ext.holder.internal({app: 'app01', tail: 'y'})">
+        App01, y</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="ext.holder.internal({app: 'app02', tail: 'x'})">
+        App02, x</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="ext.holder.internal({app: 'app02', tail: 'y'})">
+        App02, y</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="ext.holder.internal({app: 'app03', tail: 'x'})">
+        App03, x</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="ext.holder.internal({app: 'app03', tail: 'y'})">
+        App03, y</a></li>
+    </ul>
+  </div>
+  <div class="content-container">
+    <ui-view class="iframe-wrapper"></ui-view>
+  </div>
+</div>

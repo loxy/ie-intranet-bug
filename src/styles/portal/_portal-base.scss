@@ -1,0 +1,64 @@
+// <body class="portal">
+//   <div class="portal-container">
+//     <div class="portal-header"></div>
+//     <div class="portal-content">
+//       <div class="portal-menu"></div>
+//       <div class="content-container"></div>
+//     </div>
+//   </div>
+// </body>
+
+html {
+  font-size: 16px; // 1 rem
+}
+
+body {
+  // height: 100vh;
+  background: transparent;
+  margin: 0;
+}
+
+.portal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portal-content {
+  flex: 1 0 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.iframe-wrapper {
+   flex: 1 1 auto;
+   position: relative;
+   > * {
+     position: absolute;
+     height: 100%;
+     width: 100%;
+     overflow-y: auto;
+   }
+ }
+
+iframe {
+  position: absolute;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.portal-header {
+  background: #ccc;
+}
+
+.portal-menu {
+  padding: 1rem;
+  background: #ddd;
+}

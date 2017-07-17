@@ -1,0 +1,14 @@
+node_modules/
+/.idea
+webpack.userconfig.json
+generator.log
+test-results
+build/
+coverage/
+dist/
+test-results/
+dll/
+wars/
+target/
+doc/
+fallback-portal.config.ts
