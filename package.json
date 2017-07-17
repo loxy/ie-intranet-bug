@@ -47,7 +47,6 @@
     "file-loader": "^0.10.1",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.28.0",
-    "istanbul-instrumenter-loader": "^2.0.0",
     "live-server": "^1.2.0",
     "ngtemplate-loader": "^1.3.1",
     "node-sass": "^4.5.3",
@@ -83,22 +82,18 @@
   },
   "scripts": {
     "build:dev": "npm run clean:dist && webpack --config config/webpack.dev.js --profile --env.NODE_ENV=development",
-    "build:staging": "npm run clean:dist && webpack --config config/webpack.prod.js --env.NODE_ENV=test  --profile --bail",
     "build:prod": "npm run clean:dist && webpack --config config/webpack.prod.js --env.NODE_ENV=production  --profile --bail",
-    "build:spec": "npm run clean:dist && webpack --config config/webpack.karma.js --env.NODE_ENV=production --profile --bail",
     "build": "npm run build:dev",
     "clean:dist": "rimraf dist",
-    "clean:install": "npm set progress=false && npm install",
     "clean:all": "npm cache clean && rimraf node_modules doc test-results coverage dist dll",
-    "preclean:install": "npm run clean:all",
     "server:dev": "webpack-dev-server --config config/webpack.dev.js --profile --watch --env.NODE_ENV=development",
     "serve:dist": "live-server dist --port=3000 --cors --open=/aol/ --mount=/aol:./dist",
     "start": "npm run server:dev",
     "watch:dev": "npm run build:dev -- --watch",
     "watch:prod": "npm run build:prod -- --watch",
-    "watch:test": "npm run test -- --auto-watch --no-single-run",
     "watch": "npm run watch:dev",
-    "mock-backend": "node src/backend-mock/index.js"
+    "start-apps": "node src/app-backend-mocks/index.js",
+    "portal": "npm-run-all -p -r start-apps watch:prod serve:dist"
   },
   "version": "0.0.1"
 }

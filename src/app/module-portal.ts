@@ -23,13 +23,11 @@ portal.config(function ($sceDelegateProvider) {
 // remove "!" prefix
 portal.config(function ($locationProvider: ILocationProvider) {
   'ngInject';
-  console.log('Hello World!');
   $locationProvider.hashPrefix('');
 });
 
 portal.run(function($rootScope: IRootScopeService) {
   'ngInject';
-
   $rootScope.$on("$stateChangeError", console.log.bind(console));
 });
 
@@ -37,17 +35,9 @@ portal.run(function ($state: StateService, $location: ILocationService, $window:
   'ngInject';
 
   robot.on(NavigationMessage.APP_STATE_SUCCESS, function (event) {
-    //$location.path('fsadf/dfsdfsdf/fsdf');
-    // const url = `${$location.protocol()}${$location.host()}${event.data.url}`;
-    //const url = `#/app/hello${event.data.url}`;
-    //$window.location.replace(url);
-    //$state.go('about');
-    console.log('old path', $location.path());
+    // Not implemented yet
     console.log(NavigationMessage.APP_STATE_SUCCESS, 'occured:', event.data.path);
-    // $location.path('/about');
-    // $location.url(event.data.url);
-    console.log('new path', $location.path());
-    // console.log('new path', event.source.location);
+    console.log('current path in portal:', $location.path());
   });
 
 });
