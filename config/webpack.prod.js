@@ -23,7 +23,6 @@ module.exports = function (env) {
         'angular-route',
         'angular-sanitize',
         'angular-animate',
-        'angular-ui-bootstrap',
         'core-js',
         'lodash'
       ],
