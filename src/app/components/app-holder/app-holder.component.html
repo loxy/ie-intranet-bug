@@ -2,5 +2,7 @@
 <iframe class="si-application"
         frameborder="0"
         ng-src="{{vm.src}}"
-        si-onload="vm.onApplicationLoad(contentWindow)">
+        si-load
+        on-load="vm.onApplicationLoad(contentWindow)"
+        on-unload="vm.onApplicationUnload(contentWindow)">
 </iframe>

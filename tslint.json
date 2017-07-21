@@ -37,8 +37,6 @@
     "no-consecutive-blank-lines": true,
     "no-console": [
       true,
-      "debug",
-      "info",
       "time",
       "timeEnd",
       "trace"

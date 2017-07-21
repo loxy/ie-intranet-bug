@@ -29,4 +29,9 @@ export class AppHolderController implements IController {
         console.error(`[AppHolderController] - ${NavigationCommand.TRY_TO_NAVIGATE} failed:`, err);
       });
   }
+
+  onApplicationUnload(contentWindow: Window) {
+    console.debug(`[AppHolderController] - completely unloaded`);
+    delete this.currentWindowService.currentWindow;
+  }
 }
